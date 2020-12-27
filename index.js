@@ -1,3 +1,23 @@
+// Задача 17.2
+
+// Создайте объект с ключами a, b и c 
+// и значениями 1, 2 и 3. Найдите сумму его элементов.
+
+// let obj = {a: 1, b: 2, c: 3};
+// let result = 0
+// for (let key in obj) {
+// 	result += obj[key];
+// }
+
+// console.log(result)
+
+// Задача 17.7
+
+// Создайте объект user с ключами name (имя), surname (фамилия), patronymic (отчество) и какими-то произвольными значениями. 
+// Выведите на экран фамилию, имя и отчество через пробел.
+
+// let user = {name: 'Николай', surname : 'Никалов', patronymic : 'Николаевич'};
+// console.log(user.name + ' ' + user.surname + ' ' + user.patronymic)
 
 
 // Задача 51.1
@@ -175,26 +195,47 @@
 
 // console.log(arr);
 
-// Задача 17.2
+// Задача 64.10
 
-// Создайте объект с ключами a, b и c 
-// и значениями 1, 2 и 3. Найдите сумму его элементов.
+// Дан массив с числами. Найдите среднее арифметическое его 
+// элементов (сумма элементов, делить на количество).
+// 1111111111111111111111
 
-// let obj = {a: 1, b: 2, c: 3};
+// let arr = [1,2,3,4,5]
+
 // let result = 0
-// for (let key in obj) {
-// 	result += obj[key];
+// let averege = 0;
+// for(let i = 0; i < arr.length; i++) {
+// 	if (i < arr.length) {
+// 		result +=(arr[i])
+		
+// 	}
+// 	averege = result / arr.length;
 // }
 
-// console.log(result)
+// console.log(averege);
 
-// Задача 17.7
+// Задача 64.11
 
-// Создайте объект user с ключами name (имя), surname (фамилия), patronymic (отчество) и какими-то произвольными значениями. 
-// Выведите на экран фамилию, имя и отчество через пробел.
+// Напишите скрипт, который будет находить факториал числа. 
+// Факториал (обозначается !) - это произведение (умножение) всех целых чисел, меньше данного, и его самого. Например, 4! = 1*2*3*4.
 
-// let user = {name: 'Николай', surname : 'Никалов', patronymic : 'Николаевич'};
-// console.log(user.name + ' ' + user.surname + ' ' + user.patronymic)
+// let fact = 0;
+// let res = 1;
+
+// if(fact >= 1) {
+
+// for(let i = 1; i <= fact; i ++) {
+// res *= i;
+// }
+// } else if (fact == 0) {
+// res = 1;
+// } else {
+// res = 'Введите положительное число';
+// }
+// console.log(res);
+
+
 
 
 // Задача 82.2
@@ -276,15 +317,94 @@
 
 // console.log(obj)
 
-let arr = [1,2,3,4,5]
+// Задача 86.1
 
-let result = 0
+// Сделайте функцию, которая параметром будет принимать массив с числами, и проверять, что все 
+// элементы в этом массиве являются четными числами.
 
-for(let i = 0; i < arr.length; i++) {
-	for (i < arr.length) {
-		result += arr[i]
-	}
-}
+// function func(arr) {
+//     for(let elem of arr) {
+// 		if (elem % 2 === 1) {
+//             return 'НеЧётная';     
+// 		}
+// 	}
+	
+// 	return 'Чётная';
+// }
 
-console.log(i)
+// console.log(func([3, 3]))
+
+// Задача 86.2
+
+// Сделайте функцию, которая параметром будет принимать число и проверять, 
+// что все цифры это числа являются нечетными.
+
+// function func(num) {
+//     let arr = String(num).split('');
+//     for(let elem of arr){
+//     if(elem % 2 !== 0){
+//     return true;}}
+//     return false;}
+//     console.log(func(333))
+
+// Задача 86.3
+
+// Сделайте функцию, которая параметром будет принимать массив и проверять, есть ли 
+// в этом массиве два одинаковых элемента подряд.
+
+// function func(arr) {
+//     for (let i = 1,j = 1; i < arr.length; i++,j++) {
+//     if((arr[i] === j && arr[i] === j)){
+//     return true}}
+//     return false;}
+//     console.log(func([1,2,2,3,4,5,6]))
+
+// Задача 88.1
+
+//  функция, проверяющая числа на простоту:
+
+// let arr = [];
+//     for(let i = 1; i <=100;i++) {
+//         if(isPrime(i)) {
+//         arr.push(i);
+//         }
+//     }
+// console.log(arr);
+
+// function isPrime(num) {
+// 	for (let i = 2; i < num; i++) {
+// 		if (num % i === 0) {
+// 			return false;
+// 		}
+// 	}
+	
+// 	return true;
+// }
+
+
+// Задача 88.2
+
+// Дана функция getDigitsSum, которая параметром принимает 
+// целое число и возвращает сумму его цифр:
+
+// let arr = [];
+//     for(let i = 1; i <=2030;i++) {
+//         if(getDigitsSum(i) === 13) {
+//         arr.push(i);
+//         }
+//     }
+// console.log(arr);
+
+
+
+// function getDigitsSum(num) {
+// 	let sum = 0;
+// 	let digits = String(num).split('');
+	
+// 	for (let digit of digits) {
+// 		sum += Number(digit);
+// 	}
+	
+// 	return sum;
+// }
 
