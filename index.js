@@ -573,22 +573,547 @@
 
 // Добавьте нового студента в подгруппу 'subgroup11'.
 
-let students = {
-  group1: {
-    subgroup11: ["student111", "student112", "student113"],
-    subgroup12: ["student121", "student122", "student123"],
-  },
-  group2: {
-    subgroup21: ["student211", "student212", "student213"],
-    subgroup22: ["student221", "student222", "student223"],
-  },
-  group3: {
-    subgroup31: ["student311", "student312", "student313"],
-    subgroup32: ["student321", "student322", "student323"],
-  },
-};
+// let students = {
+//   group1: {
+//     subgroup11: ["student111", "student112", "student113"],
+//     subgroup12: ["student121", "student122", "student123"],
+//   },
+//   group2: {
+//     subgroup21: ["student211", "student212", "student213"],
+//     subgroup22: ["student221", "student222", "student223"],
+//   },
+//   group3: {
+//     subgroup31: ["student311", "student312", "student313"],
+//     subgroup32: ["student321", "student322", "student323"],
+//   },
+// };
 
-students.group1.push("student14");
+// students.group1.subgroup11.push("student14");
+// console.log(students);
+
+// Задача 74.4
+// Сделайте четвертую группу, в ней сделайте подгруппу и добавьте в нее двух новых студентов.
+
+// let students = {
+//   group1: {
+//     subgroup11: ["student111", "student112", "student113"],
+//     subgroup12: ["student121", "student122", "student123"],
+//   },
+//   group2: {
+//     subgroup21: ["student211", "student212", "student213"],
+//     subgroup22: ["student221", "student222", "student223"],
+//   },
+//   group3: {
+//     subgroup31: ["student311", "student312", "student313"],
+//     subgroup32: ["student321", "student322", "student323"],
+//   },
+// };
+
+// students.group4 = { subgroup41: [] };
+
+// students.group4.subgroup41.push("student411");
+// students.group4.subgroup41.push("student412");
+// console.log(students);
+
+// Задача 74.5
+
+// Дана вот такая структура для хранения списка дел за определенные даты:
+// Сделайте функцию addAffair, которая будет добавлять новое дело в заданную дату.
+//  Пусть функция первым параметром принимает дату, а вторым - дело.
+
+// let affairs = {
+//   "2019-12-28": ["дело11", "дело12", "дело13"],
+//   "2019-12-29": ["дело21", "дело22", "дело23"],
+//   "2019-12-30": ["дело31", "дело32", "дело33"],
+// };
+
+// addAffair("2019-12-30", "дело14");
+// addAffair("2019-12-31", "дело41");
+
+// function addAffair(date, affair) {
+//   if (affairs[date] === undefined) {
+//     affairs[date] = [];
+//   }
+
+//   affairs[date].push(affair);
+// }
+
+// console.log(affairs);
+
+// Задача 74.6
+
+// Дана вот такая структура для хранения студентов:
+// Сделайте функцию addStudent, которая будет добавлять нового студента.
+//  Пусть функция первым параметром принимает группу, а вторым - подгруппу, а третьим - имя студента.
+
+// let students = {
+//   group1: {
+//     subgroup11: ["student111", "student112", "student113"],
+//     subgroup12: ["student121", "student122", "student123"],
+//   },
+//   group2: {
+//     subgroup21: ["student211", "student212", "student213"],
+//     subgroup22: ["student221", "student222", "student223"],
+//   },
+//   group3: {
+//     subgroup31: ["student311", "student312", "student313"],
+//     subgroup32: ["student321", "student322", "student323"],
+//   },
+// };
+
+// function addStudent(group, subgroup, name) {
+//   if (students[group] === undefined) {
+//     students[group] = [];
+//   }
+//   if (students[group][subgroup] === undefined) {
+//     students[group][subgroup] = [];
+//   }
+
+//   students[group][subgroup].push(name);
+// }
+
+// addStudent("group1", "subgroup12", "student124");
+// addStudent("group4", "subgroup41", "student411");
+
+// console.log(students);
+
+// Задача 74.7
+
+// Дана вот такая структура для хранения списка дел за года, месяцы и дни:
+// Сделайте функцию addAffair, которая будет добавлять новое дело в заданную дату.
+// Пусть функция первым параметром принимает год, вторым - месяц, третьим - день, а четвертым - дело.
+
+// let affairs = {
+//   2018: {
+//     11: {
+//       29: ["дело111", "дело112", "дело113"],
+//       30: ["дело121", "дело122", "дело123"],
+//     },
+//     12: {
+//       30: ["дело211", "дело212", "дело213"],
+//       31: ["дело221", "дело222", "дело223"],
+//     },
+//   },
+//   2019: {
+//     12: {
+//       29: ["дело311", "дело312", "дело313"],
+//       30: ["дело321", "дело322", "дело323"],
+//       31: ["дело331", "дело332", "дело333"],
+//     },
+//   },
+// };
+
+// function addAffair(year, month, day, affair) {
+//   if (affairs[year] === undefined) {
+//     affairs[year] = {};
+//   }
+//   if (affairs[year][month] === undefined) {
+//     affairs[year][month] = {};
+//   }
+
+//   if (affairs[year][month][day] === undefined) {
+//     affairs[year][month][day] = [];
+//   }
+
+//   affairs[year][month][day].push(affair);
+// }
+
+// addAffair(2018, 11, 29, "дело124");
+// addAffair(2017, 11, 30, "дело411");
+
+// console.log(affairs);
+
+// Задача 75.1
+
+// Запишите все элементы этого объекта в какой-нибудь массив,
+// вот так:
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+// let data = {
+//   2018: {
+//     11: {
+//       29: [1, 2, 3],
+//       30: [4, 5],
+//     },
+//     12: {
+//       30: [6, 7],
+//       31: [8, 9],
+//     },
+//   },
+//   2019: {
+//     12: {
+//       29: [10, 11],
+//       30: [12, 13],
+//       31: [14, 15],
+//     },
+//   },
+// };
+
+// let arr = [];
+// for (let user in data) {
+//   for (let user1 in data[user]) {
+//     for (let user2 in data[user][user1]) {
+//       for (let user3 of data[user][user1][user2]) {
+//         arr.push(user3);
+//       }
+//     }
+//   }
+// }
+// console.log(arr);
+
+// Задача 75.3
+
+// Выведите на экран тех юзеров, значение ключа active для которых равно true.
+
+// let users = [
+//   {
+//     name: "name1",
+//     age: 31,
+//     active: true,
+//   },
+//   {
+//     name: "name2",
+//     age: 32,
+//     active: false,
+//   },
+//   {
+//     name: "name3",
+//     age: 33,
+//     active: true,
+//   },
+//   {
+//     name: "name4",
+//     age: 34,
+//     active: false,
+//   },
+//   {
+//     name: "name5",
+//     age: 35,
+//     active: true,
+//   },
+// ];
+
+// let arr = [];
+// for (let user of users) {
+//   if (user.active === true) {
+//     arr.push(user);
+//   }
+// }
+
+// console.log(arr);
+
+// Задача 75.4
+// Подсчитайте количество стран.
+
+// let data = [
+//   {
+//     country: "Россия",
+//     city: "Москва",
+//   },
+//   {
+//     country: "Беларусь",
+//     city: "Минск",
+//   },
+//   {
+//     country: "Россия",
+//     city: "Питер",
+//   },
+//   {
+//     country: "Россия",
+//     city: "Владивосток",
+//   },
+//   {
+//     country: "Украина",
+//     city: "Львов",
+//   },
+//   {
+//     country: "Беларусь",
+//     city: "Могилев",
+//   },
+//   {
+//     country: "Украина",
+//     city: "Киев",
+//   },
+// ];
+
+// arr = [];
+// obj = {};
+// arr1 = [];
+// for (let elem of data) {
+//   arr.push(elem["country"]);
+// }
+// for (let elem1 of arr) {
+//   if (obj[elem1] === undefined) {
+//     obj[elem1]++;
+//   }
+// }
+// for (let key in obj) {
+//   arr1.push(key);
+// }
+
+// console.log(`Всего стран: ${arr1.length}`);
+
+// Задача 75.5
+// Выведите на экран все дела за 2018 год.
+// Выведите на экран все дела за 12 месяц 2018 года.
+
+// let affairs = {
+//   "2019-12-31": ["массив дел"],
+//   "2018-11-29": ["массив дел"],
+//   "2018-11-30": ["массив дел"],
+//   "2018-12-27": ["массив дел"],
+//   "2019-12-29": ["массив дел"],
+//   "2019-12-30": ["массив дел"],
+//   "2018-12-30": ["массив дел"],
+//   "2018-12-31": ["массив дел"],
+// };
+
+// for (let date in affairs) {
+//   if (
+//     date[0] == "2" &&
+//     date[1] == "0" &&
+//     date[2] == "1" &&
+//     date[3] == "8" &&
+//     date[5] == "1" &&
+//     date[6] == "2"
+//   ) {
+//     console.log(date);
+//   }
+// }
+
+// Задача 75.6
+
+// Сделайте две функции, которые будут менять значение поля active: первая функция пусть меняет на true, а вторая - на false.
+// Пусть наши функции параметрами принимают данный массив и номер юзера, над которым следует произвести изменения.
+// Пусть функции возвращают измененный массив.
+
+// let arr = [
+//   {
+//     name: "name1",
+//     active: true,
+//   },
+//   {
+//     name: "name2",
+//     active: false,
+//   },
+//   {
+//     name: "name3",
+//     active: true,
+//   },
+//   {
+//     name: "name4",
+//     active: false,
+//   },
+//   {
+//     name: "name5",
+//     active: true,
+//   },
+// ];
+
+// getTrue(arr, 1);
+// function getTrue(arr, numUser) {
+//   {
+//     if (arr[numUser]["active"] === false) {
+//       arr[numUser]["active"] = true;
+//     }
+//   }
+//   return arr;
+// }
+
+// getFalse(arr, 0);
+// function getFalse(arr, numUser) {
+//   {
+//     if (arr[numUser]["active"] === true) {
+//       arr[numUser]["active"] = false;
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(arr);
+
+// Задача 76.1
+// Вам известно, что вам нужно будет получать массивы городов определенных стран. К примеру, нужно будет
+// получить все города России, либо все города Беларуси.
+// Также необходимо будет находить количество городов в определенной стране.
+
+// let data = {
+//   Россия: ["Москва", "Питер", "Владивосток"],
+//   Беларусь: ["Минск", "Могилев"],
+//   Украина: ["Львов", "Киев"],
+// };
+// let city = [];
+// function map(data, country) {
+//   for (let key in data) {
+//     if (country === key) {
+//       city.push(data[key]);
+//     }
+//   }
+// }
+// map(data, "Беларусь");
+// console.log(city);
+
+// Задача 76.2
+// Пусть вам нужно будет получать данные за определенный день, за определенный месяц, и за определенный год.
+// Удобна ли текущая структура хранения данных для этого?
+// Если да, оставьте все как есть, если нет, переделайте структуру на более удобную. Получите затем все данные за 2020 год.
+
+// let data = [
+//   {
+//     year: 2019,
+//     month: 11,
+//     day: 20,
+//     data: ["массив с данными"],
+//   },
+//   {
+//     year: 2019,
+//     month: 11,
+//     day: 21,
+//     data: ["массив с данными"],
+//   },
+//   {
+//     year: 2019,
+//     month: 12,
+//     day: 25,
+//     data: ["массив с данными"],
+//   },
+//   {
+//     year: 2019,
+//     month: 12,
+//     day: 26,
+//     data: ["массив с данными"],
+//   },
+//   {
+//     year: 2020,
+//     month: 10,
+//     day: 29,
+//     data: ["массив с данными"],
+//   },
+//   {
+//     year: 2020,
+//     month: 10,
+//     day: 30,
+//     data: ["массив с данными"],
+//   },
+//   {
+//     year: 2020,
+//     month: 11,
+//     day: 19,
+//     data: ["массив с данными"],
+//   },
+// ];
+
+// let arr = [];
+// function map(data, year) {
+//   for (let key of data) {
+//     if (year === key.year) {
+//       arr.push(key.data);
+//     }
+//   }
+// }
+// map(data, 2020);
+// console.log(arr);
+
+// Задача 76.3
+
+// Пусть вам нужно будет получать список событий за определенную дату. Удобна ли текущая структура хранения данных для этого?
+// Если да, оставьте все как есть, если нет, переделайте структуру на более удобную. Получите затем список событий за '2019-12-30'.
+
+// let affairs = {
+//   2019: {
+//     12: {
+//       29: ["массив дел 29"],
+//       31: ["массив дел 31"],
+//       30: ["массив дел 30"],
+//     },
+//   },
+// };
+// let arr = [];
+// for (let elem in affairs) {
+//   for (let elem2 in affairs[elem]) {
+//     for (let elem3 in affairs[elem][elem2]) {
+//       for (let elem4 of affairs[elem][elem2][elem3]) {
+//         if (elem == 2019 && elem2 == 12 && elem3 == 30) {
+//           arr.push(elem4);
+//         }
+//       }
+//     }
+//   }
+// }
+// console.log(arr);
+
+// Задача 76.4
+
+// Пусть перед вами стоит задача хранения гороскопов для знаков зодиака. Гороскопы хранятся на несколько месяцев вперед.
+// Необходимо будет получать гороскопы всех знаков зодиака за определенный день,
+// а также гороскоп конкретного знака зодиака за определенный день.
+// Продумайте удобную структуру хранения данных. Укажите ее преимущества и недостатки.
+// Поясните, для решения каких задач придуманная вами структура будет неудобна.
+
+// let gor = {
+//   jan: {
+//     "Дева - гороскоп: нормально": [1, 2, 3, 15],
+//     "Весы - гороскоп: все наперекосяк ": [16, 17, 30, 31],
+//   },
+//   fev: {
+//     "Телец - гороскоп:неплохо": [1, 2, 3, 15],
+//     "Рак - гороскоп: все будет прикольно": [16, 17, 27, 28],
+//   },
+//   mar: {
+//     "Овен - гороскоп: вас ждет светлое будущее": [1, 2, 3, 15],
+//     "Стрелец - гороскоп: все очень плохо": [16, 17, 30, 31],
+//   },
+// };
+// let data = 15;
+// for (let key in gor) {
+//   for (let key1 in gor[key]) {
+//     if (gor[key][key1].includes(data)) {
+//       console.log(key1);
+//     }
+//   }
+// }
+
+// let data = [
+//   {
+//     country: "Россия",
+//     city: "Москва",
+//   },
+//   {
+//     country: "Беларусь",
+//     city: "Минск",
+//   },
+//   {
+//     country: "Россия",
+//     city: "Питер",
+//   },
+//   {
+//     country: "Россия",
+//     city: "Владивосток",
+//   },
+//   {
+//     country: "Украина",
+//     city: "Львов",
+//   },
+//   {
+//     country: "Беларусь",
+//     city: "Могилев",
+//   },
+//   {
+//     country: "Украина",
+//     city: "Киев",
+//   },
+// ];
+
+// let res = {};
+// for (let element of data) {
+//   if (res[element.country] === undefined) {
+//     res[element.country] = [element.city];
+//   } else {
+//     res[element.country].push(element.city);
+//   }
+// }
+
+// console.log(res);
 
 // Задача 78.3
 
@@ -1010,23 +1535,29 @@ students.group1.push("student14");
 
 // console.log(result);
 
-// Задача 95.2
+// 3333333Пишем функцию решения квадратного уравнения через дискриминант:
+// ax² + bx + c = 0 (общий вид уравнения)
 
-// Используя созданную функцию, найдите сумму трех случайных элементов из массива.
+// D = b**2 – 4ac
+// D > 0
+// x1 = (-b + √D ) / 2a
+// x2 = (-b – √D ) / 2a
+// D = 0
+// x = -b / 2a
 
-// function getRandomInt(min, max) {
-// 	return Math.floor(Math.random() * (max - min + 1) + min);
+// function equation(a = 1, b = -2, c = -3) {
+//   let D = b ** 2 - 4 * a * c;
+//   if (D > 0) {
+//     let x1 = (-b + Math.sqrt(D)) / (2 * a);
+//     let x2 = (-b - Math.sqrt(D)) / (2 * a);
+//     return console.log(`Ответ: x1 = ${x1}
+//   x2 = ${x2}`);
+//   } else if (D === 0) {
+//     let x = (-b / 2) * a;
+//     return console.log(`Ответ: x = ${x}`);
+//   } else if (D < 0) {
+//     return console.log("Ответ: нет действительных корней");
+//   }
 // }
 
-// function random(arr) {
-// 	let sum = 0;
-// 	let key = getRandomInt(0, arr.length - 1 );
-// 	for(let i = 0; i < arr.length - 1 ; i++){
-// 	sum += arr[key];}
-// 	return sum;
-// }
-
-// 	let arr = [1, 3,4];
-// 	console.log(random(arr));
-
-//
+// equation(-1, -2, -3);
