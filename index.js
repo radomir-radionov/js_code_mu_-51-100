@@ -1535,6 +1535,252 @@
 
 // console.log(result);
 
+// Задача 91.1
+
+// Реализуйте функцию getOwnDivisors. Потестируйте ее работу
+
+// function getOwnDivisors(num) {
+//   let divisors = [];
+//   for (let i = 1; i < num; i++) {
+//     if (num % i === 0) {
+//       divisors.push(i);
+//     }
+//   }
+//   return divisors;
+// }
+
+// console.log(getOwnDivisors(220));
+
+// Задача 91.2
+
+// Реализуйте функцию getSum. Потестируйте ее работу.
+
+// function getSum(divisors) {
+//   let sumDivisors = 0;
+//   for (let i = 0; i < divisors.length; i++) {
+//     sumDivisors += divisors[i];
+//   }
+//   return sumDivisors;
+// }
+
+// function getSum(divisors) {
+//   let sum = 0;
+//   for (let elem of divisors) {
+//     sum += Number(elem);
+//   }
+//   return sum;
+// }
+
+// console.log(getSum(getOwnDivisors(220)));
+
+// Задача 91.3
+
+// Проверьте работу функции isFreindly.
+
+// function isFreindly(num1, num2) {
+
+//     for (let i = 1; i < num; i++) {
+//   let sum1 = getSum(getOwnDivisors(num1));
+//   let sum2 = getSum(getOwnDivisors(num2));
+
+//   if (sum1 == num2 && sum2 == num1) {
+//     return true;
+//   } else {
+//     return false;
+//   }}
+// }
+
+// console.log(isFreindly(100, 111));
+
+// Задача 91.4
+
+// Сделайте функцию getFreindly, которая будет находить пары дружественных чисел в заданном промежутке и возвращать
+// их в виде двухмерного массива вида [ [220, 284], [1184, 1210], [2620, 2924] ]. С помощью созданной функции найдите
+// все пары дружественных чисел на промежутке от 1 до 9000.
+
+// function getOwnDivisors(num) {
+//   let arr = [];
+//   for (let i = 1; i < num; i++) {
+//     if (num % i == 0) {
+//       arr.push(i);
+//     }
+//   }
+//   return arr;
+// }
+// function getSum(num) {
+//   let sum = 0;
+//   for (let elem of num) {
+//     sum += elem;
+//   }
+//   return sum;
+// }
+// function getFreindly(a, b) {
+//   let arr = [];
+
+//   for (; a < b; a++) {
+//     let sum = getSum(getOwnDivisors(a));
+//     let compare = getSum(getOwnDivisors(sum));
+//     if (a === compare && a !== sum) {
+//       let tempArr = [];
+//       tempArr.push(a, sum);
+//       arr.push(tempArr);
+//     }
+//   }
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     if (arr[i][0] === arr[i + 1].reverse()[0]) {
+//       arr.splice(i, 1);
+//     }
+//   }
+//   return arr;
+// }
+// console.log(getFreindly(1, 9000));
+
+// Задача 91.5
+
+// Совершенное число - целое число, равное сумме всех своих собственных делителей (то есть всех положительных делителей,
+// отличных от самого числа). Сделайте функцию getPerfect, которая будет находить совершенные числа в заданном диапазоне.
+// Проверьте работу функции в промежутке от 1 до 1000.
+
+// function getPerfect(a, b) {
+//   let arr = [];
+//   for (; a < b; a++) {
+//     if (getSum(a) === a) {
+//       arr.push(a);
+//     }
+//   }
+//   return arr;
+// }
+
+// function getSum(num) {
+//   let sum = 0;
+//   for (let i = 1; i < num; i++) {
+//     if (num % i == 0) {
+//       sum += i;
+//     }
+//   }
+//   return sum;
+// }
+
+// console.log(getPerfect(1, 10000));
+
+// Задача 91.6
+
+// Сделайте функцию getSimpleDivisors, которая будет принимать параметром целое число и находить все делители
+// этого числа, являющиеся простыми числами.
+
+// function isPrime(num) {
+//     for (let i = 2; i < num; i++) {
+//       if (num % i === 0) {
+//         return false;
+//       }
+//     }
+
+//     return true;
+//   }
+
+//   // делители числа
+
+//   function getDivisors(num) {
+//     let result = [];
+
+//     for (let i = 2; i < num; i++) {
+//       if (num % i == 0) {
+//         result.push(i);
+//       }
+//     }
+
+//     return result;
+//   }
+
+//   // сама функция
+//   function getSimpleDivisors(num) {
+//     let result = [];
+
+//     for (let elem of getDivisors(num)) {
+//       if (isPrime(elem)) {
+//         result.push(elem);
+//       }
+//     }
+
+//     return result;
+//   }
+
+//   console.log(getSimpleDivisors(1003));
+
+// function getInt(arr1, arr2) {
+//   let result = [];
+
+//   for (let elem of arr1) {
+//     if (inArray(elem, arr2)) {
+//       result.push(elem);
+//     }
+//   }
+
+//   return result;
+// }
+
+// function inArray(elem, arr) {
+//   return arr.indexOf(elem) !== -1;
+// }
+// console.log(getInt([1, 2, 3], [2, 3, 4, 5]));
+
+// function getDiff(arr1, arr2) {
+//   let diff1 = getFirstDiff(arr1, arr2);
+//   let diff2 = getFirstDiff(arr2, arr1);
+
+//   return [].concat(diff1, diff2);
+// }
+
+// function getFirstDiff(arr1, arr2) {
+//   let result = [];
+
+//   for (let elem of arr1) {
+//     if (!inArray(elem, arr2)) {
+//       result.push(elem);
+//     }
+//   }
+
+//   return result;
+// }
+
+// function inArray(elem, arr) {
+//   return arr.indexOf(elem) !== -1;
+// }
+// console.log(getDiff([1, 2, 3], [2, 3, 4, 5])); // выведет [1, 4, 5]
+
+// Задача 94.1
+
+// Реализуйте функцию getGreatestCommonDivisor, которая параметрами будет принимать два числа и возвращать НОД этих двух чисел.
+// При решении задачи старайтесь использовать вспомогательные функции, в том числе полученные нами ранее в теоретической части.
+// Обязательно тестируйте каждую вспомогательную функцию перед использованием.
+
+let num1 = 12;
+let num2 = 18;
+
+function getGreatestCommonDivisor(num1, num2) {}
+
+function getInt(arr1, arr2) {
+  let result = [];
+
+  for (let elem of arr1) {
+    if (inArray(elem, arr2)) {
+      result.push(elem);
+    }
+  }
+
+  return result;
+}
+
+function getOwnDivisors(num) {
+  let divisors = [];
+  for (let i = 1; i <= num; i++) {
+    if (num % i === 0) {
+      result.push(i);
+    }
+  }
+  return divisors;
+}
+
 // 3333333Пишем функцию решения квадратного уравнения через дискриминант:
 // ax² + bx + c = 0 (общий вид уравнения)
 
